@@ -20,18 +20,20 @@ begin
   vm = prov.vm
   $evm.log("info","VM is #{vm}")
   # Adding disks
-  #i = 0
-  #while i < disk_20_quantity do
+  i = 0
+  while i < disk_20_quantity do
   size = 20
   $evm.log("info", "Creating a new #{size}GB disk on Storage:<#{vm.storage_name}>")
   vm.add_disk("[#{vm.storage_name}]", size * 1024, :sync => true)
-
-  vm = prov.vm
+  i += 1
+  end
+  i = 0
+  while i < disk_50_quantity do
+  size = 50
   $evm.log("info", "Creating a new #{size}GB disk on Storage:<#{vm.storage_name}>")
   vm.add_disk("[#{vm.storage_name}]", size * 1024, :sync => true)
-
-  #i += 1
-  #end
+  i += 1
+  end
   #
   # Exit method
   #
