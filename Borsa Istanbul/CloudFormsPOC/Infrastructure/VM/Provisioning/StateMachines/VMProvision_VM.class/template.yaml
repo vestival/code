@@ -1,0 +1,16 @@
+---
+object_type: instance
+version: 1.0
+object:
+  attributes:
+    display_name: Provision VM from Template
+    name: template
+    inherits: 
+    description: 
+  fields:
+  - AcquireIPAddress:
+      value: "/Integration/RedHat/CloudForms/MIQ_IPAM/IPAM_Methods/Acquire_IP_From_Automate"
+  - Provision:
+      value: "/Infrastructure/VM/Provisioning/StateMachines/Methods/Provision"
+  - CheckProvisioned:
+      value: "/Infrastructure/VM/Provisioning/StateMachines/Methods/CheckProvisioned"
